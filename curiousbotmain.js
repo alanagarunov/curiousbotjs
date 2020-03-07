@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const mr = require('./markovread.js');
 const {prefix,token} = require('./config.json');
+const reader = require('./runmarkovconstant.js')
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
@@ -14,10 +14,10 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {console.log("Logged in as "+ client.user.tag); });
 client.on('message', msg => {
-    //if(msg.author.id === "144948237621657601")
-    //mr.mainadder(msg.content, "maddy");
+    reader.themessage((msg.author.id), (msg.channel), (msg.content));
 
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+
     const args = msg.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
