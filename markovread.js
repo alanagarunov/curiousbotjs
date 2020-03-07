@@ -17,27 +17,19 @@
         splitwords = input.split(" ")
         for(var i = 0; i < (splitwords.length - 1); i++){
             var currentWord = splitwords[i];
-            nextWord = splitwords[i+1];
-        }
-        for(var key in dict){
-            if(key === currentWord){
-                var AllNextWords = dict[currentWord];
-                //console.log(AllNextWords);
-                for(var key in AllNextWords){
-                    if(key === nextWord){
-                    //convert python syntax to js??
-                        dict[currentWord][nextWord] = dict[currentWord][nextWord]+1;
-                        }
-                        else{
-                            dict[currentWord][nextWord] = 1;
-                    }
+            var nextWord = splitwords[i+1];
+            if(!(currentWord in dict)){
+                dict[currentWord] = { [nextWord] : 1 };
+            } else{
+                AllNextWords = dict[currentWord];
+                if(!(nextWord in AllNextWords)){
+                    dict[currentWord][nextWord] = 1;
+                }else{
+                    dict[currentWord][nextWord] = dict[currentWord][nextWord]+1;
                 }
             }
-            else{
-            //improper syntax most likely
-                dict[currentWord] = { currentWord : 1 };
-            }
         }
+        return dict;
     }
 
     function updateFile(filename, dictionary){
