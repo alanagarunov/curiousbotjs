@@ -8,8 +8,8 @@ module.exports = {
         var sleepcycle = 0;
         var timetofall = [];
 
-        for(var i = 0; i < 10; i++){
-            if(totalminutes > 0){
+        for(var i = 0; i < 50; i++){
+            if(totalminutes > 0 && totalminutes < 1440){
                 if((totalminutes - 90) > 0){
                     totalminutes = totalminutes - 90;
                     sleepcycle++;
@@ -30,16 +30,16 @@ module.exports = {
         var b2h = 0, b2m = 0, b4h = 0, b4m = 0, b6h = 0, b6m = 0, b8h = 0, b8m = 0;
 
         if(Math.floor(timetofall[0]/60) < 10) {b2h = "0"+ Math.floor(timetofall[0]/60)} else {b2h = Math.floor(timetofall[0]/60) }
-        if((timetofall[0]%1)*60  < 10){b2m = "0"+ (timetofall[0]%1)*60} else {b2m = (timetofall[0]%1)*60 }
+        if(Math.ceil(((timetofall[0]/60)%1)*60)  < 10){b2m = "0"+ Math.ceil(((timetofall[0]/60)%1)*60)} else {b2m = Math.ceil(((timetofall[0]/60)%1)*60) }
 
         if(Math.floor(timetofall[1]/60) < 10) {b4h = "0"+ Math.floor(timetofall[1]/60)} else {b4h = Math.floor(timetofall[1]/60) }
-        if((timetofall[1]%1)*60  < 10){b4m = "0"+ (timetofall[1]%1)*60} else {b4m = (timetofall[1]%1)*60 }
+        if(Math.ceil(((timetofall[1]/60)%1)*60)  < 10){b4m = "0"+ Math.ceil(((timetofall[1]/60)%1)*60)} else {b4m = Math.ceil(((timetofall[1]/60)%1)*60) }
 
         if(Math.floor(timetofall[2]/60) < 10) {b6h = "0"+ Math.floor(timetofall[2]/60)} else {b6h = Math.floor(timetofall[2]/60) }
-        if((timetofall[2]%1)*60  < 10){b6m = "0"+ (timetofall[2]%1)*60} else {b6m = (timetofall[2]%1)*60 }
+        if(Math.ceil(((timetofall[2]/60)%1)*60)  < 10){b6m = "0"+ Math.ceil(((timetofall[2]/60)%1)*60)} else {b6m = Math.ceil(((timetofall[2]/60)%1)*60) }
 
         if(Math.floor(timetofall[3]/60) < 10) {b8h = "0"+ Math.floor(timetofall[3]/60)} else {b8h = Math.floor(timetofall[3]/60) }
-        if((timetofall[3]%1)*60  < 10){b8m = "0"+ (timetofall[3]%1)*60} else {b8m = (timetofall[3]%1)*60 }
+        if(Math.ceil(((timetofall[3]/60)%1)*60)  < 10){b8m = "0"+ Math.ceil(((timetofall[3]/60)%1)*60)} else {b8m = Math.ceil(((timetofall[3]/60)%1)*60) }
 
 
         const embed = {
