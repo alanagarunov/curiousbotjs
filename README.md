@@ -21,9 +21,9 @@ if(anid === "<id>"){
         mr.mainadder(msgcontent, "<person>");
     }
 ```
-Replace <person> with the name you chose on the dictionary. Replace <id> with the user's discord id, you can get this by right clicking on their name in a server (make sure you are in developer mode first!).
+Replace \<person\> with the name you chose on the dictionary. Replace \<id\> with the user's discord id, you can get this by right clicking on their name in a server (make sure you are in developer mode first!).
 
-Its all set! In order to generate some text, run "<bot_prefix> simulate <person>".
+Its all set! In order to generate some text, run "<bot_prefix> simulate \<person\>".
 
 ## Markov Chain Text Generator Options
 
@@ -34,7 +34,7 @@ This is also possible, simply follow the "Using the Markov Chain Text Generator"
 ```js
  mr.mainadder(msgcontent, "<person>");
 ```
-As before, replace <person> with the name of the dictionary file, in this case it wouldn't be a person's name it would probably be the name of the server or channel.
+As before, replace \<person\> with the name of the dictionary file, in this case it wouldn't be a person's name it would probably be the name of the server or channel.
 ## FAQ
 
 #### What is a Markov Chain?
@@ -58,7 +58,7 @@ When I made this bot, I made it with the intention of learning a new programming
 
 - Ping discord servers (useful to see if the servers have gone down or not)
 - Sleep Cycle Calculator
-- View System info (CPU Temps/Utilization , uptime, etc)
+- View System info (CPU Temps/Utilization, uptime, etc)
 - Love Live! SIF & SIFAS Gacha Card Generator
 
   
